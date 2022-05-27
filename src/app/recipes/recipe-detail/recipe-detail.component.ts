@@ -22,6 +22,7 @@ export class RecipeDetailComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
+          // tslint:disable-next-line:no-string-literal
           this.id = +params['id'];
           this.recipe = this.recipeService.getRecipe(this.id);
         }

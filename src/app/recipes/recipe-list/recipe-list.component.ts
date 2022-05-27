@@ -13,13 +13,11 @@ import { RecipeService } from '../recipe.service';
 export class RecipeListComponent implements OnInit, OnDestroy {
   recipes: Recipe[];
   subscription: Subscription;
-
   constructor(private recipeService: RecipeService,
               private router: Router,
               private route: ActivatedRoute) {
-  }
-
-  ngOnInit() {
+    }
+    ngOnInit() {
     this.subscription = this.recipeService.recipesChanged
       .subscribe(
         (recipes: Recipe[]) => {
